@@ -290,9 +290,26 @@ s8 	setPkmIV(u8 val, u8 stat, struct s_pkm *pkm)
   return 0;
 }
 
+s8 	setPkmEgg(struct s_pkm *pkm)
+{
+  u32 	iv32 = pkm->pkx.individualValues;
+  u8 	nval = getPkmEgg(iv32);
+  u32 	mask = 0xFFFFFFFF;
+  mask ^= 0x40000000;
+  
+  iv32 = (iv32 & mask) | (nval ? 0x40000000 : 0);
+  pkm->pkx.individualValues = iv32;
+  return 0;
+}
+
 u8 	getPkmIV(u32 individualValues, u8 stat)
 {
   return (individualValues >> (5 * stat)) & 0x1F;
+}
+
+u8      getPkmEgg(u32 individualValues)
+{
+  return ((individualValues >> 30) & 1) == 1;
 }
 
 u16 	calcPkmStat(u16 species, u8 IV, u8 EV, u8 nature, u8 level, u8 stat, u8 form)

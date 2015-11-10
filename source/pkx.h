@@ -124,7 +124,9 @@ s8 	setPkmSpecies(struct s_pkm *pkm, u16 species);
 s32     decryptPokemon(u8 *enc, u8 *dec);
 s32    	encryptPokemon(u8 *dec, u8 *enc);
 u8 	getPkmIV(u32 individualValues, u8 stat);
+u8 	getPkmEgg(u32 individualValues);
 s8 	setPkmIV(u8 val, u8 stat, struct s_pkm *pkm);
+s8 	setPkmEgg(struct s_pkm *pkm);
 s8 	setPkmLevel(struct s_pkm *, u8 level);
 s8 	pkmRecalc(struct s_pkm *);
 

@@ -155,6 +155,7 @@ void 	pkmGenTrainerFrd(t_stinf *state)
   if (kPressed & KEY_LEFT) addFrd -= 10;
   if (kPressed & KEY_UP) addFrd++;
   if (kPressed & KEY_DOWN) addFrd--;
+  if (kPressed & KEY_A) setPkmEgg(&state->pkm);
   if (addFrd) state->modded = 1;
   state->pkm.pkx.trainerFriendship = (s8)state->pkm.pkx.trainerFriendship + addFrd;
 }
