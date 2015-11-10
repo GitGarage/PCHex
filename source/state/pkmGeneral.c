@@ -69,7 +69,7 @@ void 	pkmGeneralTrainerDisplay(t_stinf *state)
   printf("Handler:%-12s", getHdlName(tmp, &state->pkm));
 
   selectColor(7, ist, sel);
-  printf("Friendship/Hatch Counter:%-3d", pkx->trainerFriendship);
+  printf("Friendship/Egg:%-3d", pkx->trainerFriendship);
   resetColor(); printf("%-6s", "");
   selectColor(8, ist, sel);
   printf("Friendship:%-3d\n", pkx->handlerFriendship);
