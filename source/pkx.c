@@ -297,8 +297,8 @@ s8 	setPkmEgg(struct s_pkm *pkm)
   u32 	mask = 0xFFFFFFFF;
   mask ^= 0x40000000;
   
-  memcpy(pkm->pkx.nickname, nval ? pkData.species[0] : pkData.species[pkm->pkx.species], 26);
-  iv32 = (iv32 & mask) | (nval ? 0x40000000 : 0);
+  memcpy(pkm->pkx.nickname, nval ? pkData.species[pkm->pkx.species] : pkData.species[0], 26);
+  iv32 = (iv32 & mask) | (nval ? 0 : 0x40000000 );
   pkm->pkx.individualValues = iv32;
   return 0;
 }
