@@ -6,6 +6,7 @@
 
 #include "pchex.h"
 
+
 //Basic line separation to array of strings
 s8 	loadLines(u8 *src, u8 *dst, u8 strlen,  u32 size)
 {
@@ -78,6 +79,9 @@ s8 	loadData(Handle *sdHandle, FS_archive *sdArchive)
   if (ret) { printf("loading failed : error code %ld\n", ret); return ret; }
   loadLines(tmp, pkData.natures[0], 8, bytesRead);
   printf(" OK\n");
+  
+
+  
   return 0;
 }
 
@@ -119,7 +123,8 @@ int 	pchexinit(struct s_pchex *pch)
     return -1;
 
   //save loading, save is loaded into the array 'save'
-  pch->save = malloc(0xEB000);
+  pch->save = malloc(0x1D6000);
+  
   pch->game = loadSave(pch->save, &pch->sav.handle, &pch->sav.arch);
   if (pch->game < 0)
     pch->game = loadSave(pch->save, &pch->sd.handle, &pch->sd.arch);

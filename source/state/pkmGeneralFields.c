@@ -43,6 +43,15 @@ void 	pkmGenNickname(t_stinf *state)
 
   if (stdInputField(state, -1, 1, 0, 0)) return;
   if (kPressed & KEY_X) {setNickname((char *) pkData.species[state->pkm.pkx.species], &state->pkm); state->modded = 1;}
+  if (kPressed & KEY_Y) {
+      u8* name = overlayGet(" Nickname");
+      if (name!=NULL && sizeof(name) > 0)
+      {
+         setu16Name(name, state->pkm.pkx.nickname);
+         state->modded = 1;
+         state->inSel = 0;
+      }
+  }
 }
 
 void 	pkmGenPID(t_stinf *state)
@@ -137,11 +146,31 @@ void 	pkmGenEXP(t_stinf *state)
 void 	pkmGenOT(t_stinf *state)
 {
   if (stdInputField(state, -1, 2, 0, 1)) return;
+    u32	kPressed = state->kPressed;
+  if (kPressed & KEY_Y) {
+      u8* name = overlayGet("n OT");
+      if (name!=NULL && sizeof(name) > 0)
+      {
+         setu16Name(name, state->pkm.pkx.trainerName);
+         state->modded = 1;
+         state->inSel = 0;
+      }
+  }
 }
 
 void 	pkmGenHandler(t_stinf *state)
 {
   if (stdInputField(state, -2, 2, -1, 0)) return;
+    u32	kPressed = state->kPressed;
+  if (kPressed & KEY_Y) {
+      u8* name = overlayGet(" Handler");
+      if (name!=NULL && sizeof(name) > 0)
+      {
+         setu16Name(name, state->pkm.pkx.handlerName);
+         state->modded = 1;
+         state->inSel = 0;
+      }
+  }
 }
 
 void 	pkmGenTrainerFrd(t_stinf *state)

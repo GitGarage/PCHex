@@ -232,6 +232,72 @@ s16	overlayGetpkm()
   return over.foundIndex[over.dataIndex];
 }
 
+char*	overlayGet(char * title)
+{
+  struct s_overlay 	over;
+  char			tmp[12];
+
+  strcpy(over.list, " abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()'");
+  strcpy(over.title, concatinate("Choose a", title));
+  over.dst = tmp;
+  over.maxlen = 12;
+  over.offs = 0;
+  over.index = 0;
+  over.dataIndex = -1;
+  over.data = tmp;
+  over.entrylen = 12;
+  over.datacount = 1;
+  over.foundIndex[0] = -1;
+  memcpy(&over.win, consoleGetDefault(), sizeof(PrintConsole));
+  doSearch(&over);
+  launchOverlay(&over);
+  return concatinate("", tmp);
+}
+
+char*	overlayGetLogin()
+{
+  struct s_overlay 	over;
+  char			tmp[12];
+
+  strcpy(over.list, "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()'");
+  strcpy(over.title, "Choose a Login");
+  over.dst = tmp;
+  over.maxlen = 12;
+  over.offs = 0;
+  over.index = 0;
+  over.dataIndex = -1;
+  over.data = tmp;
+  over.entrylen = 12;
+  over.datacount = 1;
+  over.foundIndex[0] = -1;
+  memcpy(&over.win, consoleGetDefault(), sizeof(PrintConsole));
+  doSearch(&over);
+  launchOverlay(&over);
+  return concatinate("", tmp);
+}
+
+char*	overlayGetPassword()
+{
+  struct s_overlay 	over;
+  char			tmp[12];
+
+  strcpy(over.list, "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()'");
+  strcpy(over.title, "Choose a Password");
+  over.dst = tmp;
+  over.maxlen = 12;
+  over.offs = 0;
+  over.index = 0;
+  over.dataIndex = -1;
+  over.data = tmp;
+  over.entrylen = 12;
+  over.datacount = 1;
+  over.foundIndex[0] = -1;
+  memcpy(&over.win, consoleGetDefault(), sizeof(PrintConsole));
+  doSearch(&over);
+  launchOverlay(&over);
+  return concatinate("", tmp);
+}
+
 s16	overlayGetMove()
 {
   struct s_overlay 	over;

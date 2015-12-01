@@ -7,4 +7,23 @@
         <activeConfTypeElem>0</activeConfTypeElem>
         <activeConfIndexElem>0</activeConfIndexElem>
     </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/state/pkmCombatFields.c</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/state/pkmManage.c</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/UI.c</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/overlay.c</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/sav.c</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/overlay.h</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/state/state.h</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/pkx.c</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/state/pkmGeneral.c</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/state/pkmGeneralFields.c</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/state/pkmLoginFields.c</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/pkx.h</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/state/utils.c</file>
+            <file>file:/home/mikey/Desktop/PCHex/PCHex/source/main.c</file>
+        </group>
+    </open-files>
 </project-private>

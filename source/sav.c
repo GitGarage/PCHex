@@ -119,7 +119,7 @@ s32 	loadSave(u8 *save, Handle *fshdl, FS_archive *fsarch)
   s32 	ret;
 
   printf("Loading savefile...");
-  ret = loadFile(path, save, fsarch, fshdl, 0xEB000, &bytesRead); //actually loading the file
+  ret = loadFile(path, save, fsarch, fshdl, 0xF8A00, &bytesRead); //actually loading the file
   if (ret) return -1;
   printf(" OK, read %ld bytes\n", bytesRead);
   return (getGame(bytesRead)); //we return the which game was found

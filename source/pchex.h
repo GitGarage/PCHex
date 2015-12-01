@@ -39,7 +39,15 @@ struct s_stateInfo
   struct s_pkm 		pkm; //the currently edited pokemon
   struct s_pkm 		cpy; //the pokemon in the clipboard
   s16 			pkmSlot; //the current box slot which is edited
-
+  
+  char*                 login; // user's login
+  char*                 password; // user's password
+  char*                 uuid; // user's unique uuid
+  u8                    reg; // whether to register
+  u8                    loggedIn; // user is logged in == 1
+  u8                    empty; // current slot is empty
+  u8*                   onlineData;
+  
   struct s_UIState 	curState; //current state
   s8 			inState; //ID of what is selected
   u8			inSel; //0 if we're editing a value, 1 if we're not
@@ -53,6 +61,7 @@ extern struct s_UIState pkmSelectState;
 extern struct s_UIState pkmGeneralState;
 extern struct s_UIState pkmCombatState;
 extern struct s_UIState pkmManageState;
+extern struct s_UIState pkmLoginState;
 
 s32     saveFile(char *path, void *src, u64 size, FS_archive *archive, Handle *fsHandle, u32 *bytesWritten);
 s32     saveSFile(char *path, void *src, u64 size, FS_archive *archive, Handle *fsHandle, u32 *bytesWritten);
@@ -72,6 +81,8 @@ s32 	switchState(t_stinf *state, struct s_UIState newst);
 s32 	startLoop(struct s_pchex *);
 
 s16 	overlayGetpkm();
+char* 	overlayGetLogin();
+char* 	overlayGetPassword();
 s16 	overlayGetMove();
 s16 	overlayGetAbility();
 s16 	overlayGetItems();
